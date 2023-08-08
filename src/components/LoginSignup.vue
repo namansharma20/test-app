@@ -17,7 +17,12 @@ export default {
     LoginComponent,
     SignupComponent
 },
-
+mounted(){
+    let user = localStorage.getItem('user-info')
+    if(user){
+        this.$router.push({name:'Home'})
+    }
+}
 
 }
 </script>
