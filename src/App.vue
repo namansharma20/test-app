@@ -1,18 +1,17 @@
 <template>
-
-<LoginSignup/>
+  <router-view />
 </template>
 
 <script>
-import LoginSignup from './components/LoginSignup.vue';
+// import LoginSignup from './components/LoginSignup.vue';
 
 
 
 export default {
   name: 'App',
   components: {
-    LoginSignup
-}
+    // LoginSignup
+  }
 }
 </script>
 

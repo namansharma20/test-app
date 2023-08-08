@@ -2,8 +2,8 @@
     <div>
         <h1>Login!</h1>
         
-        <input type="text" placeholder="enter email" v-bind="email">
-        <input type="password" placeholder="enter password" v-bind="password">
+        <input type="text" placeholder="enter email" v-model="email">
+        <input type="password" placeholder="enter password" v-model="password">
         <button @click="handleLogin">Login</button>
         <p>New User?</p>
         <p :style="{'cursor':'pointer'}" @click="$emit('register')">Register Here!</p>
@@ -23,7 +23,7 @@ export default {
     },
     methods:{
         handleLogin(){
-            console.warn(`Login user ${this.email} with email ${this.password}`)
+            console.warn(this.email, this.password);
         }
     },
     emits:['register']
