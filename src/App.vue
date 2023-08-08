@@ -1,18 +1,18 @@
 <template>
 
-<h1>Hello
-  
-</h1>
+<LoginSignup/>
 </template>
 
 <script>
+import LoginSignup from './components/LoginSignup.vue';
+
 
 
 export default {
   name: 'App',
   components: {
-
-  }
+    LoginSignup
+}
 }
 </script>
 
