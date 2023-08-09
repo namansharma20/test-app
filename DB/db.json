@@ -1,29 +1,4 @@
 {
-  "user": [
-    {
-      "email": "segfsdf",
-      "name": "sdfdsf",
-      "password": "sdvgdsfvsd",
-      "id": 1
-    },
-    {
-      "email": "naman@test.com",
-      "name": "naman",
-      "password": "naman@123",
-      "id": 2
-    },
-    {
-      "email": "anil@test.com",
-      "name": "anil",
-      "password": "anil@123",
-      "id": 3
-    },
-    {
-      "email": "love@test.com",
-      "name": "Love",
-      "password": "love@123",
-      "id": 4
-    }
-  ],
+  "user": [],
   "restaurant": []
 }
