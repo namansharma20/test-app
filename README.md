@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Db folder
+It contains .json file to manage database. It is hosted using Json server.
+
+json-server --watch db.json
+

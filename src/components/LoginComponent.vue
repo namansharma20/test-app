@@ -24,12 +24,12 @@ export default {
     },
     methods:{
         handleLogin(){
-            console.warn(this.email, this.password);
+            
             axios.get(
                 `http://localhost:3000/user?email=${this.email}&password=${this.password}`
             ).then((result)=>{
                 if(result.data[0]){
-                console.log(result);
+                
                 localStorage.setItem("user-info",JSON.stringify(result.data))
                 this.$router.push({name:'Home'})}
             })
