@@ -1,4 +1,60 @@
 {
-  "user": [],
-  "restaurant": []
+  "user": [
+    {
+      "email": "naman@test.com",
+      "name": "Naman Sharma",
+      "password": "naman@123",
+      "id": 1
+    },
+    {
+      "email": "abhishek@test.com",
+      "name": "Abhishek",
+      "password": "abhishek@123",
+      "id": 2
+    },
+    {
+      "email": "ashok@test.com",
+      "name": "Ashok Sharma",
+      "password": "ashok@123",
+      "id": 3
+    },
+    {
+      "email": "abhay@test.com",
+      "name": "Abhay Sharma",
+      "password": "abhay@123",
+      "id": 4
+    }
+  ],
+  "restaurant": [
+    {
+      "name": "Shankar mishthan",
+      "address": "Jamdoli, Jaipur",
+      "phone": "9865234764",
+      "id": 1
+    },
+    {
+      "name": "Dominos",
+      "address": "Panch Batti",
+      "phone": "9737462763",
+      "id": 2
+    },
+    {
+      "name": "Sky Beach",
+      "address": "Vaishali Nagar, Jaipur",
+      "phone": "9876904578",
+      "id": 3
+    },
+    {
+      "name": "Molly Moo",
+      "address": "Kanodia Circle, JLN Marg",
+      "phone": "7865348965",
+      "id": 4
+    },
+    {
+      "name": "Saras Parlor",
+      "address": "JLN Marg",
+      "phone": "9823906534",
+      "id": 5
+    }
+  ]
 }
