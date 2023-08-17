@@ -1,3 +1,65 @@
+<script setup>
+import { onMounted, ref } from 'vue';
+import NavBar from './NavBar.vue';
+import axios from 'axios';
+import { useRouter } from 'vue-router';
+
+let restaurants = ref([])
+let router = useRouter()
+onMounted(()=>{
+    reload()
+})
+
+async function reload(){
+    let user = localStorage.getItem('user-info');
+        if (!user) {
+            router.push({ name: 'SignUp' });
+        }
+        let result = await axios.get("http://localhost:3000/restaurant")
+       
+        restaurants.value = result.data;
+}
+function handleDelete(id){
+            console.log(id)
+            axios.delete("http://localhost:3000/restaurant/"+id).then(()=>{
+                reload()
+            })
+            
+        }
+
+
+// export default {
+//     name: 'HomeComponent',
+//     data() {
+//         return {
+//             restaurants: [],
+//         }
+//     },
+//     methods:{
+//         handleDelete(id){
+//             console.log(id)
+//             axios.delete("http://localhost:3000/restaurant/"+id).then(()=>{
+//                 this.reload()
+//             })
+            
+//         },
+//         async reload(){
+//             let user = localStorage.getItem('user-info');
+//         if (!user) {
+//             this.$router.push({ name: 'SignUp' });
+//         }
+//         let result = await axios.get("http://localhost:3000/restaurant")
+       
+//         this.restaurants = result.data;
+//         }
+//     },
+//     mounted() {
+//         this.reload()
+//     },
+//     components: { NavBar }
+// }
+</script>
+
 <template>
     <NavBar />
     <div>
@@ -22,41 +84,6 @@
         </tr>
     </table>
 </template>
-
-<script>
-import NavBar from './NavBar.vue';
-import axios from 'axios';
-export default {
-    name: 'HomeComponent',
-    data() {
-        return {
-            restaurants: [],
-        }
-    },
-    methods:{
-        handleDelete(id){
-            console.log(id)
-            axios.delete("http://localhost:3000/restaurant/"+id).then(()=>{
-                this.reload()
-            })
-            
-        },
-        async reload(){
-            let user = localStorage.getItem('user-info');
-        if (!user) {
-            this.$router.push({ name: 'SignUp' });
-        }
-        let result = await axios.get("http://localhost:3000/restaurant")
-       
-        this.restaurants = result.data;
-        }
-    },
-    mounted() {
-        this.reload()
-    },
-    components: { NavBar }
-}
-</script>
 
 <style scoped>
 td{

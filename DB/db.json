@@ -23,15 +23,15 @@
       "name": "Abhay Sharma",
       "password": "abhay@123",
       "id": 4
+    },
+    {
+      "email": "",
+      "name": "",
+      "password": "",
+      "id": 5
     }
   ],
   "restaurant": [
-    {
-      "name": "Shankar mishthan",
-      "address": "Jamdoli, Jaipur",
-      "phone": "9865234764",
-      "id": 1
-    },
     {
       "name": "Dominos",
       "address": "Panch Batti",
@@ -53,8 +53,14 @@
     {
       "name": "Saras Parlor",
       "address": "JLN Marg",
-      "phone": "9823906534",
+      "phone": "9823906533",
       "id": 5
+    },
+    {
+      "name": "sdffdasgf",
+      "address": "asdgadsg",
+      "phone": "asdgasdg",
+      "id": 6
     }
   ]
 }

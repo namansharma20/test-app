@@ -7,16 +7,24 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name:'NavBar',
-        methods:{
-            logout(){
-                localStorage.clear();
-                this.$router.push({name:'Signup'})
-            },
-        }
-    }
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter()
+function logout(){
+    localStorage.clear();
+    router.push({name:'Signup'})
+}
+
+
+    // export default {
+    //     name:'NavBar',
+    //     methods:{
+    //         logout(){
+    //             localStorage.clear();
+    //             this.$router.push({name:'Signup'})
+    //         },
+    //     }
+    // }
 </script>
 
 <style scoped>

@@ -1,3 +1,55 @@
+<script setup>
+import axios from'axios';
+import { ref } from 'vue';
+import { useRouter,defineEmits } from 'vue-router';
+
+let name = ref('')
+let email = ref('')
+let password = ref('')
+
+let router = useRouter()
+
+function handleSignup(){
+            // console.warn("Sign up user with email ", this.name, this.email);
+    axios.post("http://localhost:3000/user",{
+        email:email.value,
+        name:name.value,
+        password:password.value
+    }).then((result)=>{
+        localStorage.setItem("user-info",JSON.stringify(result.data))
+        router.push({name:'Home'})
+    })
+}
+defineEmits(['login'])
+// export default {
+//     name: 'SignupComponent',
+//     data() {
+//         return {
+//             name: '',
+//             email:'',
+//             password:'',
+//         }
+
+//     },
+    
+//     methods:{
+//         handleSignup(){
+//             // console.warn("Sign up user with email ", this.name, this.email);
+//             axios.post("http://localhost:3000/user",{
+//                 email:this.email,
+//                 name:this.name,
+//                 password:this.password
+//             }).then((result)=>{
+                
+//                 localStorage.setItem("user-info",JSON.stringify(result.data))
+//                 this.$router.push({name:'Home'})
+//             })
+//         }
+//     },
+//     emits:['login']
+// }
+</script>
+
 <template>
     <div class="main">
         <div class="register">
@@ -13,36 +65,7 @@
     </div>
 </template>
 
-<script>
-import axios from'axios';
-export default {
-    name: 'SignupComponent',
-    data() {
-        return {
-            name: '',
-            email:'',
-            password:'',
-        }
 
-    },
-    
-    methods:{
-        handleSignup(){
-            // console.warn("Sign up user with email ", this.name, this.email);
-            axios.post("http://localhost:3000/user",{
-                email:this.email,
-                name:this.name,
-                password:this.password
-            }).then((result)=>{
-                
-                localStorage.setItem("user-info",JSON.stringify(result.data))
-                this.$router.push({name:'Home'})
-            })
-        }
-    },
-    emits:['login']
-}
-</script>
 <style>
 .main{
     border: 1px solid black;

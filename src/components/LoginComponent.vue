@@ -1,3 +1,53 @@
+<script setup>
+import axios from 'axios';
+import { ref,defineEmits } from 'vue';
+import { useRouter } from 'vue-router';
+const route = useRouter()
+function handleLogin(){
+    axios.get(`http://localhost:3000/user?email=${email.value}&password=${password.value}`).then((result)=>{
+        if(result.data[0]){
+            localStorage.setItem("user-info",JSON.stringify(result.data))
+            
+            route.push({name:'Home'})
+        }
+    })
+// http://localhost:3000/user?email=segfsdf&password=sdvgdsfvsd
+}
+let email = ref('');
+let password=ref('');   
+defineEmits(['register'])        
+
+// export default {
+//     name: 'LoginComponent',
+//     data() {
+//         return {
+            
+//             email:'',
+//             password:'',
+//         }
+
+//     },
+//     methods:{
+//         handleLogin(){
+            
+//             axios.get(
+//                 `http://localhost:3000/user?email=${this.email}&password=${this.password}`
+//             ).then((result)=>{
+//                 if(result.data[0]){
+                
+//                 localStorage.setItem("user-info",JSON.stringify(result.data))
+//                 this.$router.push({name:'Home'})}
+//             })
+            
+
+//             // http://localhost:3000/user?email=segfsdf&password=sdvgdsfvsd
+//         }
+//     },
+//     emits:['register']
+// }
+</script>
+
+
 <template>
     <div class="main">
 
@@ -17,37 +67,7 @@
     
 </template>
 
-<script>
-import axios from 'axios';
-export default {
-    name: 'LoginComponent',
-    data() {
-        return {
-            
-            email:'',
-            password:'',
-        }
 
-    },
-    methods:{
-        handleLogin(){
-            
-            axios.get(
-                `http://localhost:3000/user?email=${this.email}&password=${this.password}`
-            ).then((result)=>{
-                if(result.data[0]){
-                
-                localStorage.setItem("user-info",JSON.stringify(result.data))
-                this.$router.push({name:'Home'})}
-            })
-            
-
-            // http://localhost:3000/user?email=segfsdf&password=sdvgdsfvsd
-        }
-    },
-    emits:['register']
-}
-</script>
 
 <style scoped>
 .login{

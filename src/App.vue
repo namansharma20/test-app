@@ -2,19 +2,19 @@
 <router-view />
 </template>
 
-<script>
+<script setup>
 // import NavBar from './components/NavBar.vue';
 
 // import LoginSignup from './components/LoginSignup.vue';
 
 
 
-export default {
-  name: 'App',
-  components: {
-    // NavBar
-}
-}
+// export default {
+//   name: 'App',
+//   components: {
+//     // NavBar
+// }
+// }
 </script>
 
 <style>
